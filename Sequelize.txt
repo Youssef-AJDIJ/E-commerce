@@ -1,0 +1,16 @@
+# instalar 
+npm install sequelize
+npm install mysql2
+npm install --save-dev sequelize-cli
+
+# Para comenzar la estructura de carpetas estándar
+npx sequelize-cli init
+
+# crear la base de datos en mysql 
+npx sequelize-cli db:create
+
+# para crear un archivo en migration
+npx sequelize-cli migration:generate --name Product
+
+# crear las tablas que estan en la carpeta de migration 
+npx sequelize-cli db:migrate

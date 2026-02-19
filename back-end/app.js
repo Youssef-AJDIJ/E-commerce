@@ -1,18 +1,22 @@
+'use strict';
 
-
-import db from './models/index.js';
-import express from 'express';
 import "dotenv/config.js";
-
-
-const app = express();
-
+import express from 'express';
+import userRoutes from './routes/user.js';
+import db from './models/index.js';
 
 const PORT = process.env.PORT || 3000;
 
-// .sync() verifica si las tablas existen, si no, las crea
-db.sequelize.sync({ force: false }).then(() => {
+const app = express();
+app.use(express.json()); // NECESARIO para que req.body funcione
+
+// Usar las rutas
+app.use('/api/users', userRoutes);
+
+
+// Sincronizar y arrancar
+db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
-    console.log(`Servidor corriendo en puerto ${PORT} y DB sincronizada`);
+    console.log(`✅ Servidor CRUD listo en http://localhost:${PORT}`);
   });
-});
+})
