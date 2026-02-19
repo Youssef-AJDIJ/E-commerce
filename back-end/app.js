@@ -1,15 +1,18 @@
-import { creatConnection, PORT } from "./config/database.js";
-import express from "express"
 
 
+import db from './models/index.js';
+import express from 'express';
+import "dotenv/config.js";
 
-const app = express()
-app.use(express.json())
+
+const app = express();
 
 
-creatConnection()
+const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () =>{
-    console.log(`The server is running on port : ${PORT}`);
-})
-
+// .sync() verifica si las tablas existen, si no, las crea
+db.sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en puerto ${PORT} y DB sincronizada`);
+  });
+});
