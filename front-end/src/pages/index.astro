@@ -1,0 +1,139 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="container">
+    <section class="hero-section">
+      <aside class="sidebar">
+        <nav>
+          <a href="#">Woman's Fashion <span>›</span></a>
+          <a href="#">Men's Fashion <span>›</span></a>
+          <a href="#">Electronics</a>
+          <a href="#">Home & Lifestyle</a>
+          <a href="#">Medicine</a>
+          <a href="#">Sports & Outdoor</a>
+          <a href="#">Baby's & Toys</a>
+          <a href="#">Groceries & Pets</a>
+          <a href="#">Health & Beauty</a>
+        </nav>
+      </aside>
+      <div class="main-banner">
+        <div class="banner-text">
+          <div class="banner-brand"><img src="/apple.png" alt="" /> iPhone 14 Series</div>
+          <h1>Up to 10% off Voucher</h1>
+          <a href="#" class="shop-now-link">Shop Now →</a>
+        </div>
+        <img src="/iphone.png" alt="iPhone" class="banner-img" />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-tag">Today's</div>
+      <div class="section-header">
+        <h2 class="section-title">Flash Sales</h2>
+        <div class="countdown">03 : 23 : 19 : 56</div>
+      </div>
+      <div class="products-row">
+        </div>
+      <div class="center-btn">
+        <button class="btn-red">View All Products</button>
+      </div>
+    </section>
+
+    <section class="section border-top">
+      <div class="section-tag">Categories</div>
+      <h2 class="section-title">Browse By Category</h2>
+      <div class="category-grid">
+         <div class="cat-box"><i class="icon-phone"></i><span>Phones</span></div>
+         <div class="cat-box"><i class="icon-computer"></i><span>Computers</span></div>
+         <div class="cat-box active"><i class="icon-camera"></i><span>Camera</span></div>
+         </div>
+    </section>
+
+    <section class="music-banner">
+      <div class="music-content">
+        <span class="category-text">Categories</span>
+        <h2>Enhance Your Music Experience</h2>
+        <div class="music-timer">
+          <div class="timer-circle"><span>23</span>Hours</div>
+          <div class="timer-circle"><span>05</span>Days</div>
+          </div>
+        <button class="btn-green">Buy Now!</button>
+      </div>
+      <img src="/jbl-speaker.png" alt="Speaker" class="speaker-img" />
+    </section>
+
+    <section class="section">
+      <div class="section-tag">Featured</div>
+      <h2 class="section-title">New Arrival</h2>
+      <div class="arrival-grid">
+        <div class="item-large bg-black">
+          <img src="/ps5.png" alt="" />
+          <div class="item-info">
+            <h3>PlayStation 5</h3>
+            <p>Black and White version of the PS5 coming out on sale.</p>
+            <a href="#">Shop Now</a>
+          </div>
+        </div>
+        <div class="item-side bg-black">
+           <img src="/woman-hat.png" alt="" />
+           <div class="item-info"><h3>Women's Collections</h3><a href="#">Shop Now</a></div>
+        </div>
+        <div class="item-small bg-black">
+           <img src="/speakers.png" alt="" />
+        </div>
+        <div class="item-small bg-black">
+           <img src="/perfume.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="services-row">
+      <div class="service-item">
+        <div class="icon-circle">🚚</div>
+        <h3>FREE AND FAST DELIVERY</h3>
+        <p>Free delivery for all orders over $140</p>
+      </div>
+      </section>
+  </main>
+</Layout>
+
+<style>
+  /* Variables y Resets */
+  .container { max-width: 1170px; margin: 0 auto; padding: 0 20px; }
+  .section { margin-top: 80px; }
+  .section-tag { color: #DB4444; border-left: 20px solid #DB4444; padding-left: 16px; font-weight: 600; margin-bottom: 20px; }
+  .section-title { font-size: 36px; font-weight: 600; margin-bottom: 40px; }
+
+  /* Hero Section */
+  .hero-section { display: flex; gap: 40px; }
+  .sidebar { width: 230px; border-right: 0.5px solid rgba(0,0,0,0.3); padding-top: 40px; }
+  .sidebar a { display: block; padding: 10px 0; text-decoration: none; color: black; font-size: 16px; }
+  .sidebar a span { float: right; }
+  .main-banner { flex: 1; background: black; margin-top: 40px; display: flex; align-items: center; padding: 60px; color: white; position: relative; }
+  .banner-brand { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+  .main-banner h1 { font-size: 48px; max-width: 300px; line-height: 1.2; }
+
+  /* Music Banner */
+  .music-banner { background: black; color: white; display: flex; padding: 70px; margin-top: 100px; border-radius: 0; align-items: center; position: relative; overflow: hidden; }
+  .category-text { color: #00FF66; font-weight: 600; }
+  .music-banner h2 { font-size: 48px; margin: 30px 0; max-width: 450px; }
+  .btn-green { background: #00FF66; color: white; padding: 16px 48px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; }
+  .speaker-img { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); width: 500px; filter: drop-shadow(0 0 50px rgba(255,255,255,0.2)); }
+
+  /* New Arrival Grid (Layout Asimétrico) */
+  .arrival-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 30px; height: 600px; }
+  .bg-black { background: #000; border-radius: 4px; position: relative; padding: 30px; overflow: hidden; }
+  .item-large { grid-row: 1 / 3; }
+  .item-side { grid-column: 2 / 4; }
+  .item-info { position: absolute; bottom: 30px; left: 30px; color: white; z-index: 2; }
+  .item-info h3 { font-size: 24px; margin-bottom: 10px; }
+  .item-info a { color: white; text-decoration: underline; font-weight: 500; }
+  .bg-black img { position: absolute; bottom: 0; right: 0; max-height: 100%; object-fit: contain; }
+
+  /* Services Section */
+  .services-row { display: flex; justify-content: center; gap: 80px; margin-top: 140px; text-align: center; }
+  .icon-circle { background: #2f2e2e; color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; border: 10px solid #c1c1c1; font-size: 30px; }
+  .services-row h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+</style>

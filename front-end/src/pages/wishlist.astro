@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="container">
+    <div class="section-header">
+      <h2>Wishlist (4)</h2>
+      <button class="btn-outline">Move All To Bag</button>
+    </div>
+    
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="img-container">
+          <span class="discount-tag">-35%</span>
+          <img src="/bag.png" alt="Gucci Bag">
+          <div class="add-to-cart">Add To Cart</div>
+        </div>
+        <div class="product-info">
+          <h4>Gucci duffle bag</h4>
+          <p class="price">$960 <span class="old-price">$1160</span></p>
+        </div>
+      </div>
+    </div>
+  </main>
+  </Layout>
+
+  <style>
+  .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+  .product-card { position: relative; }
+  .img-container { background: var(--secondary); padding: 40px; border-radius: 4px; position: relative; }
+  .add-to-cart { 
+    position: absolute; bottom: 0; left: 0; width: 100%; 
+    background: black; color: white; padding: 10px; text-align: center;
+    opacity: 0; transition: 0.3s; cursor: pointer;
+  }
+  .img-container:hover .add-to-cart { opacity: 1; }
+  .discount-tag { background: var(--primary); color: white; position: absolute; top: 12px; left: 12px; padding: 4px 12px; border-radius: 4px; font-size: 12px; }
+</style>

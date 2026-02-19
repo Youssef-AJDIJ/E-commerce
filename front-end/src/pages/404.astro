@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="container error-page">
+    <nav class="breadcrumb">Home / 404 Error</nav>
+    <div class="error-content">
+        <h1>404 Not Found</h1>
+        <p>Your visited page not found. You may go home page.</p>
+        <a href="/" class="btn-primary">Back to home page</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .error-page { text-align: center; padding: 100px 0; }
+  .error-content h1 { font-size: 110px; font-weight: 500; margin-bottom: 40px; }
+  .error-content p { margin-bottom: 80px; }
+  .error-content a { text-decoration: none; display: inline-block; }
+</style>

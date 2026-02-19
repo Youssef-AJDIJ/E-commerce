@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="container">
+    <h1>Billing Details</h1>
+    <div class="checkout-grid">
+      <form class="billing-form">
+        <div class="input-group">
+          <label>First Name*</label>
+          <input type="text" required>
+        </div>
+        <div class="input-group">
+          <label>Street Address*</label>
+          <input type="text" required>
+        </div>
+        <div class="input-group">
+          <label>Town/City*</label>
+          <input type="text" required>
+        </div>
+        <label class="checkbox"><input type="checkbox"> Save this information...</label>
+      </form>
+
+      <div class="order-summary">
+        <div class="summary-item">
+          <span>LCD Monitor</span><span>$650</span>
+        </div>
+        <div class="total-calc">
+            <p>Subtotal: <span>$1750</span></p>
+            <p>Shipping: <span>Free</span></p>
+            <p>Total: <span>$1750</span></p>
+        </div>
+        <div class="payment-methods">
+          <label><input type="radio" name="pay"> Bank</label>
+          <label><input type="radio" name="pay" checked> Cash on delivery</label>
+        </div>
+        <button class="btn-primary">Place Order</button>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .checkout-grid { display: grid; grid-template-columns: 1fr 400px; gap: 80px; margin-top: 40px; }
+  .input-group { display: flex; flex-direction: column; margin-bottom: 20px; }
+  .input-group input { background: var(--secondary); border: none; padding: 15px; border-radius: 4px; }
+  .order-summary { display: flex; flex-direction: column; gap: 20px; }
+</style>

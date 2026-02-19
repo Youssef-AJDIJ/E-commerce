@@ -1,0 +1,102 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+
+---
+
+<Layout>
+<main class="auth-container">
+  <div class="auth-image">
+    <img src="/image/bannerAuth.png" alt="Shopping cart and phone" />
+  </div>
+  <div class="auth-form">
+    <h1>Create an account</h1>
+    <p>Enter your details below</p>
+    <form method="post">
+      <input type="text" placeholder="Name" id="name" />
+      <input type="text" placeholder="Email or Phone Number" id="email" />
+      <input type="password" placeholder="Password" id="password"/>
+      <button type="submit" class="btn-primary">Create Account</button>
+      <button type="button" class="btn-google">
+        <img src="https://www.google.com/favicon.ico" width="16" /> Sign up with Google
+      </button>
+    </form>
+    <p class="switch-auth">Already have account? <a href="/login">Log in</a></p>
+  </div>
+</main>
+</Layout>
+<style>
+  .auth-container {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    gap: 5%;
+  }
+  .auth-image {
+    flex: 1.2;
+    /* background-color: #cbe4e8; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .auth-image img {
+    max-width: 80%;
+  }
+
+  .auth-form {
+    flex: 1;
+    padding: 0 10%;
+  }
+  .auth-form h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  .auth-form p {
+    color: #000;
+    margin-bottom: 30px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    outline: none;
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    background: #db4444;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .btn-google {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .switch-auth {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .switch-auth a {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 1px solid #666;
+    text-decoration: none;
+  }
+</style>
