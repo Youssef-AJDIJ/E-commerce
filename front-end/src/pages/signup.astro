@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-
 ---
 
 <Layout>
@@ -12,10 +11,10 @@ import Layout from "../layouts/Layout.astro";
   <div class="auth-form">
     <h1>Create an account</h1>
     <p>Enter your details below</p>
-    <form method="post">
-      <input type="text" placeholder="Name" id="name" />
+    <form method="post" id="register-form"> 
+      <input type="text" placeholder="Name" id="username" />
       <input type="text" placeholder="Email or Phone Number" id="email" />
-      <input type="password" placeholder="Password" id="password"/>
+      <input type="password" placeholder="Password" id="passwordHash"/>
       <button type="submit" class="btn-primary">Create Account</button>
       <button type="button" class="btn-google">
         <img src="https://www.google.com/favicon.ico" width="16" /> Sign up with Google
@@ -25,6 +24,7 @@ import Layout from "../layouts/Layout.astro";
   </div>
 </main>
 </Layout>
+
 <style>
   .auth-container {
     display: flex;
@@ -100,3 +100,4 @@ import Layout from "../layouts/Layout.astro";
     text-decoration: none;
   }
 </style>
+<script src="../script/signup.js"></script>

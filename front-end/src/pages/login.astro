@@ -13,7 +13,7 @@ import Layout from "../layouts/Layout.astro";
   <div class="auth-form">
     <h1>Log in to Exclusive</h1>
     <p>Enter your details below</p>
-    <form method="post">
+    <form method="post" id="login-form">
       <input type="text" placeholder="Email or Phone Number" id="email" />
       <input type="password" placeholder="Password" id="password" />
       <div class="login-actions">
@@ -84,3 +84,4 @@ import Layout from "../layouts/Layout.astro";
     text-decoration: none;
   }
 </style>
+<script src="../script/login.js"></script>

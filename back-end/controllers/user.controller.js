@@ -2,15 +2,7 @@ import db from '../models/index.js';
 const User = db.User;
 
 // CREAR un usuario
-export const createUser = async (req, res) => {
-  try {
-    const { username, email, passwordHash } = req.body;
-    const user = await User.create({ username, email, passwordHash });
-    res.status(201).json({ message: 'Usuario creado', user });
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-};
+
 
 // LEER todos los usuarios
 export const getUsers = async (req, res) => {
